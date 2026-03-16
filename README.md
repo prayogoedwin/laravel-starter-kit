@@ -37,10 +37,6 @@ Our internal goal at Laravel Daily is to start using this starter kit for our De
 ![Edit Role with Grouped Permissions](screenshots/roles-edit.png)
 *Edit role with permissions grouped by resource (Users, Roles, Permissions)*
 
-### RBAC - Permission Management
-
-![Permissions List](screenshots/permissions-list.png)
-*Permission management with real-time search and export functionality*
 
 ---
 

@@ -16,12 +16,9 @@ class PermissionController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $permissions = Permission::withCount('roles')->select('permissions.*');
+            $permissions = Permission::select('permissions.*');
             
             return DataTables::of($permissions)
-                ->addColumn('roles_count', function ($permission) {
-                    return $permission->roles_count ?? 0;
-                })
                 ->addColumn('actions', function ($permission) {
                     $actions = '';
                     

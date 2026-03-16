@@ -17,15 +17,9 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $roles = Role::withCount('users', 'permissions')->select('roles.*');
+            $roles = Role::select('roles.*');
             
             return DataTables::of($roles)
-                ->addColumn('users_count', function ($role) {
-                    return $role->users_count ?? 0;
-                })
-                ->addColumn('permissions_count', function ($role) {
-                    return $role->permissions_count ?? 0;
-                })
                 ->addColumn('actions', function ($role) {
                     $actions = '';
                     
